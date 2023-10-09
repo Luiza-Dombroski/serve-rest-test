@@ -1,0 +1,40 @@
+{
+  "reports": [
+    {
+      "targets": [
+        {
+          "name": "chat",
+          "condition": "passOrFail",
+          "inputs": {
+            "url": "https://chat.googleapis.com/v1/spaces/AAAAnBUUslg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=MEsImVkWrFgmcso2z6nRO7bJ0aV0WXVZ9srqYMXIwHY%3D",
+            "title": "App - Automação de Testes de API - API Service Produto",
+            "publish": "test-summary-slim"
+          },
+          "extensions": [
+            {
+              "name": "hyperlinks",
+              "inputs": {
+                "links": [
+                  {
+                    "text": "Build AzureDevOps",
+                    "url": "$(url_azure_build)"
+                  },
+                  {
+                    "text": "Resumo Testes AzureDevOps",
+                    "url": "$(url_azure_teste_resumo)"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "type": "testng",
+          "files": ["target/surefire-reports/testng-results.xml"]
+        }
+      ]
+    }
+  ]
+}
